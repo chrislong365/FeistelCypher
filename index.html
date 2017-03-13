@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Caesar-Cipher</title>
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="app.css">
+
+	</head>
+	<body>
+		
+		<h1>Enter the string you would like to be cyphered</h1>
+		<div class="container">
+			<div class="row">
+				<div class="col col-sm-6 align-self-center">
+					<div class="form-group">
+					    <label for="toCypher">Input Text Here</label>
+					    <textarea class="form-control" id="toCypher" rows="3"></textarea>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-sm-6 align-self-center">
+					<div class="form-group">
+					    <label for="shiftBy">Select Number to be shifted by</label>
+					    <select class="form-control" id="shiftBy">
+					      <option>1</option>
+					      <option>2</option>
+					      <option>3</option>
+					      <option>4</option>
+					      <option>5</option>
+					      <option>6</option>
+					      <option>7</option>
+					      <option>8</option>
+					      <option>9</option>
+					      <option>10</option>
+					      <option>11</option>
+					      <option>12</option>
+					      <option>13</option>
+					      <option>14</option>
+					      <option>15</option>
+					      <option>16</option>
+					      <option>17</option>
+					      <option>18</option>
+					      <option>19</option>
+					      <option>20</option>
+					      <option>21</option>
+					      <option>22</option>
+					      <option>23</option>
+					      <option>24</option>
+					      <option>25</option>
+					    </select>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col col-sm-6 align-self-center">
+					<button type="button" class="btn btn-primary" id="cypher">Cypher</button>
+				</div>
+			</div>
+			<div class="col col-sm-6 align-self-center">
+				<h4 id="cyphered"></h4>
+			</div>
+		</div>
+
+
+		<script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+	  crossorigin="anonymous"></script>
+
+		<script src="app.js"></script>
+	</body>
+</html>
