@@ -1,37 +1,36 @@
-
+var output= "";
 var input= "";
-var shiftBy;
+var left="";
+var right="";
+var rounds = 24;
 
 $('#cypher').click(function(){
-	shiftBy= Number($('#shiftBy').val());
 	input= $('#toCypher').val();
+
+	left= input.substing[0,input.length];
+	right= input.substing[input.length, input.length];
 	cypher();
 
 });
 
 function cypher (){
-	var output="";
-	var temp;
-	for ( var i=0; i<input.length; i++) {
-		if(input.charAt(i).charCodeAt(0)<64 || input.charAt(i).charCodeAt(0)>91 && 
-			input.charAt(i).charCodeAt(0)<96 || input.charAt(i).charCodeAt(0)>123)
-		{
-			output= output.concat(input.charAt(i));
-		}
-		else
-		{
-			temp= input.charAt(i).charCodeAt(0);
-			if (temp< 96)
-			{
-				temp= temp+ 32;
-			}
-			temp= temp+ shiftBy;
-			if(temp>122)
-			{
-				temp=temp- 26;
-			}
-			output= output.concat(String.fromCharCode(temp));
-		}
+
+	var temp="";
+
+	for (var r= 0; r< rounds; r++){
+		temp= right;
+		right= XOR(left,f(right, r)) ;
+		left= temp;
 	}
+	output= left.combcat(right);
 	$('#cyphered').html(output);
+}
+
+function f(right, number){
+	var temp;
+
+	for (var j= 0; j< right.length; j++){
+		temp= temp.concat(((right.indexOf(j)*256 +23)*12)%256);
+	}
+	return temp;
 }
